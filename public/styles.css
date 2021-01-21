@@ -2,13 +2,26 @@ body{
     font-family: 'Nunito';
 }
 
-h2{
-    font-size: 18px;
-    padding: 10px 20px;
+h1{
+    padding: 10px 20px 0px 20px;
+    margin: 0px;
     color: #575ed8;
 }
 
-#mario-chat{
+h2{
+    font-size: 18px;
+    padding: 0px 20px 10px 20px;
+    color: #575ed8;
+}
+
+h3{
+    font-size: 12px;
+    margin: 0px 0px 10px 0px;
+    padding: 0px 20px 10px 20px;
+    color: #a0565c;
+}
+
+#kid-chat{
     max-width: 600px;
     margin: 30px auto;
     border: 1px solid #ddd;
