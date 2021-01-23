@@ -1,3 +1,5 @@
+// For reference:  https://www.w3schools.com/jsref/met_win_scrollto.asp
+
 // Make connection
 // Can just use io() instead of io.connect() when in same domain, but better to be specific.
 var socket = io.connect("http://clanrobertson.ddns.net:4000");
@@ -8,7 +10,8 @@ var message     = document.getElementById("message"),
     handle      = document.getElementById("handle"),
     button_send = document.getElementById("send"),
     output      = document.getElementById("output"),
-    form        = document.getElementById("form");
+    form        = document.getElementById("form"),
+    chatWindow  = document.getElementById("chat-window")
     feedback    = document.getElementById("feedback");
 
 function sendMessage(event) {
@@ -37,6 +40,7 @@ form.addEventListener("submit",sendMessage);
 socket.on("chat",function(data){
     output.innerHTML += "<p><strong>" + data.handle + ":" + "</strong>" + data.message + "</p>";
     feedback.innerHTML = "";
+    output.scrollIntoView(false);
     audio.play();
 });
 
