@@ -1,6 +1,7 @@
 // Make connection
 // Can just use io() instead of io.connect() when in same domain, but better to be specific.
 var socket = io.connect("http://clanrobertson.ddns.net:4000");
+var audio = new Audio('./files/message.mp3');
 
 // Query DOm
 var message     = document.getElementById("message"),
@@ -36,6 +37,7 @@ form.addEventListener("submit",sendMessage);
 socket.on("chat",function(data){
     output.innerHTML += "<p><strong>" + data.handle + ":" + "</strong>" + data.message + "</p>";
     feedback.innerHTML = "";
+    audio.play();
 });
 
 socket.on("typing",function(data){
