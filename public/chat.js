@@ -29,10 +29,6 @@ function sendMessage(event) {
 
 };
 
-message.addEventListener("keypress",function(){
-    socket.emit("typing",handle.value);
-});
-
 // Emit events on send
 form.addEventListener("submit",sendMessage);
 
@@ -42,6 +38,15 @@ socket.on("chat",function(data){
     feedback.innerHTML = "";
     output.scrollIntoView(false);
     audio.play();
+});
+
+// Broadcasting "user is typing"
+// message.addEventListener("keypress",function(){
+//     socket.emit("typing",handle.value);
+// });
+
+message.addEventListener("keydown",function(){
+    socket.emit("typing",handle.value);
 });
 
 socket.on("typing",function(data){
