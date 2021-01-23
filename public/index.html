@@ -11,12 +11,14 @@
             <h1>KidChat - Proof of concept</h1>
             <h3>Type your name in the handle, type a message and click send.</h3>
             <div id="chat-window">
-                <div id="output">                  
-                </div>
+                <div id="output"></div>
+                <div id="feedback"></div> 
             </div>
-            <input id="handle" type="text" placeholder="Handle" />
-            <input id="message" type="text" placeholder="Your message">
-            <button id="send">Send</button>
+            <form id="form" onsubmit="sendMessage()">
+                <input id="handle" type="text" placeholder="Handle" />
+                <input id="message" type="text" placeholder="Your message">
+                <button id="send">Send</button>
+            </form>
         </div>
         <script src="/chat.js"></script>
     </body>
