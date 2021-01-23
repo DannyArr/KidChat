@@ -25,6 +25,10 @@ function sendMessage(event) {
 
 };
 
+message.addEventListener("keypress",function(){
+    socket.emit("typing",handle.value);
+});
+
 // Emit events on send
 form.addEventListener("submit",sendMessage);
 
