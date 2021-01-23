@@ -37,14 +37,14 @@ socket.on("chat",function(data){
     output.innerHTML += "<p><strong>" + data.handle + ":" + "</strong>" + data.message + "</p>";
     feedback.innerHTML = "";
     output.scrollIntoView(false);
-    audio.play();
+
+    if( data.handle != handle.value ){
+        audio.play();
+    }
+    
 });
 
 // Broadcasting "user is typing"
-// message.addEventListener("keypress",function(){
-//     socket.emit("typing",handle.value);
-// });
-
 message.addEventListener("keydown",function(){
     socket.emit("typing",handle.value);
 });
